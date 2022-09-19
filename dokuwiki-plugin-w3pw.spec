@@ -2,7 +2,7 @@
 Summary:	DokuWiki W3PW Plugin
 Name:		dokuwiki-plugin-%{plugin}
 Version:	0.2
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/glensc/dokuwiki-plugin-w3pw/archive/refs/tags/2011-11-23.tar.gz
@@ -10,7 +10,6 @@ Source0:	https://github.com/glensc/dokuwiki-plugin-w3pw/archive/refs/tags/2011-1
 URL:		https://github.com/glensc/dokuwiki-plugin-w3pw
 BuildRequires:	rpmbuild(macros) >= 1.520
 Requires:	dokuwiki >= 20080505
-Requires:	w3pw
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
