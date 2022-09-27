@@ -2,12 +2,13 @@
 Summary:	DokuWiki W3PW Plugin
 Name:		dokuwiki-plugin-%{plugin}
 Version:	0.2
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/glensc/dokuwiki-plugin-w3pw/archive/refs/tags/2011-11-23.tar.gz
 # Source0-md5:	dba22dc4e0ff04997b2f6eeccc1e8d52
 URL:		https://github.com/glensc/dokuwiki-plugin-w3pw
+BuildRequires:	rpmbuild(find_lang) >= 1.41
 BuildRequires:	rpmbuild(macros) >= 1.520
 Requires:	dokuwiki >= 20080505
 BuildArch:	noarch
@@ -15,7 +16,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		dokudir		/usr/share/dokuwiki
 %define		plugindir	%{dokudir}/lib/plugins/%{plugin}
-%define		find_lang 	%{_usrlibrpm}/dokuwiki-find-lang.sh %{buildroot}
 
 %description
 This plugin adds markup to link to W3PW passwords.
@@ -31,7 +31,7 @@ cp -a . $RPM_BUILD_ROOT%{plugindir}
 %{__rm} $RPM_BUILD_ROOT%{plugindir}/LICENSE
 
 # find locales
-%find_lang %{name}.lang
+%find_lang %{name}.lang --with-dokuwiki
 
 %clean
 rm -rf $RPM_BUILD_ROOT
